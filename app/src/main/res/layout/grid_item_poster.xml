@@ -25,20 +25,28 @@
 
 <!-- ImageView to hold a poster in the main grid. -->
 
-<ImageView
+<layout
 
     xmlns:android="http://schemas.android.com/apk/res/android"
 
-    xmlns:tools="http://schemas.android.com/tools"
+    >
 
-    android:layout_width="wrap_content"
+    <ImageView
 
-    android:layout_height="wrap_content"
+        xmlns:android="http://schemas.android.com/apk/res/android"
 
-    android:id="@+id/grid_iv_poster"
+        xmlns:tools="http://schemas.android.com/tools"
 
-    tools:src="@mipmap/ic_launcher"
+        android:layout_width="wrap_content"
 
-    android:contentDescription="@string/description_grid_poster"
+        android:layout_height="wrap_content"
 
-    />
+        android:id="@+id/grid_iv_poster"
+
+        tools:src="@mipmap/ic_launcher"
+
+        android:contentDescription="@string/description_grid_poster"
+
+        />
+
+</layout>

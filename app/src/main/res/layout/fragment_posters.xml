@@ -25,32 +25,38 @@
 
 <!-- the layout to show the movie posters in a grid. -->
 
-<!-- auto_fit - Display as many columns as possible to fill the available space. -->
-<!-- verticalSpacing -  Defines the default vertical spacing between rows. -->
-<!-- horizontalSpacing -  Defines the default horizontal spacing between rows. -->
-<!-- stretchMode -  Defines how columns should stretch to fill the available empty space, if any. -->
-<!-- columnWidth - Each column is stretched equally. -->
-<!-- gravity -  Specifies the gravity within each cell. -->
-<GridView
+<layout
 
     xmlns:android="http://schemas.android.com/apk/res/android"
 
-    android:layout_width="match_parent"
+    >
 
-    android:layout_height="match_parent"
+    <!-- auto_fit - Display as many columns as possible to fill the available space. -->
+    <!-- verticalSpacing -  Defines the default vertical spacing between rows. -->
+    <!-- horizontalSpacing -  Defines the default horizontal spacing between rows. -->
+    <!-- stretchMode -  Defines how columns should stretch to fill the available empty space, if any. -->
+    <!-- columnWidth - Each column is stretched equally. -->
+    <!-- gravity -  Specifies the gravity within each cell. -->
+    <GridView
 
-    android:id="@+id/fp_gv_posters"
+        android:layout_width="match_parent"
 
-    android:columnWidth="@dimen/grid_column_width"
+        android:layout_height="match_parent"
 
-    android:numColumns="auto_fit"
+        android:id="@+id/fp_gv_posters"
 
-    android:verticalSpacing="@dimen/grid_item_spacing"
+        android:columnWidth="@dimen/grid_column_width"
 
-    android:horizontalSpacing="@dimen/grid_item_spacing"
+        android:numColumns="auto_fit"
 
-    android:stretchMode="columnWidth"
+        android:verticalSpacing="@dimen/grid_item_spacing"
 
-    android:gravity="center"
+        android:horizontalSpacing="@dimen/grid_item_spacing"
 
-    />
+        android:stretchMode="columnWidth"
+
+        android:gravity="center"
+
+        />
+
+</layout>

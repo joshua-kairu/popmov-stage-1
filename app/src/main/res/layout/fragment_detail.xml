@@ -25,162 +25,169 @@
 
 <!-- the layout to show details of a selected movie. -->
 
-<RelativeLayout
+<layout
 
     xmlns:android="http://schemas.android.com/apk/res/android"
 
     xmlns:tools="http://schemas.android.com/tools"
 
-    android:layout_width="match_parent"
-
-    android:layout_height="match_parent"
-
-    android:padding="@dimen/layout_padding"
-
     >
 
-    <!-- TextView to hold the title -->
-
-    <TextView
+    <RelativeLayout
 
         android:layout_width="match_parent"
 
-        android:layout_height="@dimen/title_height"
+        android:layout_height="match_parent"
 
-        android:id="@+id/detail_tv_title"
+        android:padding="@dimen/layout_padding"
 
-        android:paddingStart="@dimen/layout_padding"
+        >
 
-        android:paddingEnd="@dimen/layout_padding"
+        <!-- TextView to hold the title -->
 
-        android:paddingLeft="@dimen/layout_padding"
+        <TextView
 
-        android:paddingRight="@dimen/layout_padding"
+            android:layout_width="match_parent"
 
-        android:gravity="center_vertical"
+            android:layout_height="@dimen/title_height"
 
-        android:textColor="@android:color/white"
+            android:id="@+id/detail_tv_title"
 
-        tools:text="Chappie"
+            android:paddingStart="@dimen/layout_padding"
 
-        android:background="?colorPrimary"
+            android:paddingEnd="@dimen/layout_padding"
 
-        />
+            android:paddingLeft="@dimen/layout_padding"
 
-    <!-- ImageView for the poster -->
+            android:paddingRight="@dimen/layout_padding"
 
-    <ImageView
+            android:gravity="center_vertical"
 
-        android:id="@+id/detail_iv_poster"
+            android:textColor="@android:color/white"
 
-        android:layout_width="wrap_content"
+            tools:text="Chappie"
 
-        android:layout_height="wrap_content"
+            android:background="?colorPrimary"
 
-        android:layout_alignParentLeft="true"
+            />
 
-        android:layout_alignParentStart="true"
+        <!-- ImageView for the poster -->
 
-        android:layout_below="@id/detail_tv_title"
+        <ImageView
 
-        android:contentDescription="@string/description_detail_poster"
+            android:id="@+id/detail_iv_poster"
 
-        android:paddingTop="@dimen/space_between_content_areas"
+            android:layout_width="wrap_content"
 
-        android:paddingRight="@dimen/layout_padding"
+            android:layout_height="wrap_content"
 
-        android:paddingLeft="@dimen/layout_padding"
+            android:layout_alignParentLeft="true"
 
-        android:paddingStart="@dimen/layout_padding"
+            android:layout_alignParentStart="true"
 
-        tools:src="@mipmap/ic_launcher"
+            android:layout_below="@id/detail_tv_title"
 
-        />
+            android:contentDescription="@string/description_detail_poster"
 
-    <!-- TextView for the release date -->
+            android:paddingTop="@dimen/space_between_content_areas"
 
-    <TextView
+            android:paddingRight="@dimen/layout_padding"
 
-        android:id="@+id/detail_tv_date"
+            android:paddingLeft="@dimen/layout_padding"
 
-        android:layout_toEndOf="@id/detail_iv_poster"
+            android:paddingStart="@dimen/layout_padding"
 
-        android:layout_toRightOf="@id/detail_iv_poster"
+            tools:src="@mipmap/ic_launcher"
 
-        android:layout_below="@id/detail_tv_title"
+            />
 
-        android:layout_width="wrap_content"
+        <!-- TextView for the release date -->
 
-        android:layout_height="wrap_content"
+        <TextView
 
-        android:paddingTop="@dimen/space_between_content_areas"
+            android:id="@+id/detail_tv_date"
 
-        tools:text="2015"
+            android:layout_toEndOf="@id/detail_iv_poster"
 
-        />
+            android:layout_toRightOf="@id/detail_iv_poster"
 
-    <!-- TextView for movie duration -->
+            android:layout_below="@id/detail_tv_title"
 
-    <TextView
+            android:layout_width="wrap_content"
 
-        android:id="@+id/detail_tv_duration"
+            android:layout_height="wrap_content"
 
-        android:layout_width="wrap_content"
+            android:paddingTop="@dimen/space_between_content_areas"
 
-        android:layout_height="wrap_content"
+            tools:text="2015"
 
-        android:layout_toEndOf="@id/detail_iv_poster"
+            />
 
-        android:layout_toRightOf="@id/detail_iv_poster"
+        <!-- TextView for movie duration -->
 
-        android:layout_below="@id/detail_tv_date"
+        <TextView
 
-        android:paddingTop="@dimen/space_between_content_areas"
+            android:id="@+id/detail_tv_duration"
 
-        tools:text="120min"
+            android:layout_width="wrap_content"
 
-        />
+            android:layout_height="wrap_content"
 
-    <!-- TextView for vote average -->
+            android:layout_toEndOf="@id/detail_iv_poster"
 
-    <TextView
+            android:layout_toRightOf="@id/detail_iv_poster"
 
-        android:id="@+id/detail_tv_vote_average"
+            android:layout_below="@id/detail_tv_date"
 
-        android:layout_width="wrap_content"
+            android:paddingTop="@dimen/space_between_content_areas"
 
-        android:layout_height="wrap_content"
+            tools:text="120min"
 
-        android:layout_toEndOf="@id/detail_iv_poster"
+            />
 
-        android:layout_toRightOf="@id/detail_iv_poster"
+        <!-- TextView for vote average -->
 
-        android:layout_below="@id/detail_tv_duration"
+        <TextView
 
-        android:paddingTop="@dimen/space_between_content_areas"
+            android:id="@+id/detail_tv_vote_average"
 
-        tools:text="8.1/10"
+            android:layout_width="wrap_content"
 
-        />
+            android:layout_height="wrap_content"
 
-    <!-- TextView for plot synopsis -->
+            android:layout_toEndOf="@id/detail_iv_poster"
 
-    <TextView
+            android:layout_toRightOf="@id/detail_iv_poster"
 
-        android:id="@+id/detail_tv_synopsis"
+            android:layout_below="@id/detail_tv_duration"
 
-        android:layout_width="wrap_content"
+            android:paddingTop="@dimen/space_between_content_areas"
 
-        android:layout_height="wrap_content"
+            tools:text="8.1/10"
 
-        android:layout_below="@id/detail_iv_poster"
+            />
 
-        android:paddingTop="@dimen/layout_padding"
+        <!-- TextView for plot synopsis -->
 
-        android:paddingBottom="@dimen/text_baseline"
+        <TextView
 
-        tools:text="Movie details layout contains title, release date, movie poster, vote average, and plot synopsis."
+            android:id="@+id/detail_tv_synopsis"
 
-        />
+            android:layout_width="wrap_content"
 
-</RelativeLayout>
+            android:layout_height="wrap_content"
+
+            android:layout_below="@id/detail_iv_poster"
+
+            android:paddingTop="@dimen/layout_padding"
+
+            android:paddingBottom="@dimen/text_baseline"
+
+            tools:text="Movie details layout contains title, release date, movie poster, vote average, and plot synopsis."
+
+            />
+
+    </RelativeLayout>
+
+</layout>
+
