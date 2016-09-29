@@ -31,4 +31,6 @@
 
     <string name="description_detail_poster">Movie poster</string>
 
+    <string name="description_grid_poster">Grid item movie poster</string>
+
 </resources>

@@ -39,4 +39,6 @@
 
     tools:src="@mipmap/ic_launcher"
 
+    android:contentDescription="@string/description_grid_poster"
+
     />
