@@ -24,5 +24,11 @@
 <!-- strings. -->
 
 <resources>
+
     <string name="app_name">PopMov</string>
+
+    <!-- Content descriptions -->
+
+    <string name="description_detail_poster">Movie poster</string>
+
 </resources>
