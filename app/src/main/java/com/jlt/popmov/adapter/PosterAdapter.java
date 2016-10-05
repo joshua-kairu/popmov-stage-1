@@ -1,8 +1,8 @@
 /*
  * 
- * PopMov
+ * com.jlt.popmov.adapter
  * 
- * An Android app to show the latest movies from https://www.themoviedb.org.
+ * <one line to give the program's name and a brief idea of what it does.>
  * 
  * Copyright (C) 2016 Kairu Joshua Wambugu
  * 
@@ -21,47 +21,32 @@
  *
  */
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+package com.jlt.popmov.adapter;
 
 /**
- * The landing activity
+ *
  * */
-// begin activity MainActivity
-public class MainActivity extends AppCompatActivity {
+// begin class PosterAdapter
+public class PosterAdapter {
 
     /* CONSTANTS */
     
     /* Integers */
     
     /* Strings */
-    
+        
     /* VARIABLES */
-
-    /* Strings */
-
-    private String mCurrentSortOrder; // ditto
-
+    
+    /* CONSTRUCTOR */
+    
     /* METHODS */
-
+    
     /* Getters and Setters */
-
+    
     /* Overrides */
-
-    @Override
-    // begin onCreate
-    protected void onCreate( Bundle savedInstanceState ) {
-
-        // 0. super things
-
-        // 0. super things
-
-        super.onCreate( savedInstanceState );
-
-    } // end onCreate
     
     /* Other Methods */
     
     /* INNER CLASSES */
 
-} // end activity MainActivity
+} // end class PosterAdapter

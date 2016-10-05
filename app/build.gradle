@@ -3,6 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 24
     buildToolsVersion "24.0.2"
+    dataBinding.enabled = true
 
     defaultConfig {
         applicationId "com.jlt.popmov"
@@ -10,7 +11,7 @@ android {
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
-        dataBinding.enabled = true
+        vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
         release {
@@ -21,7 +22,8 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:24.2.0'
+    compile 'com.squareup.picasso:picasso:2.5.2'
 }
