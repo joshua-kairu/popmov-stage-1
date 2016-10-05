@@ -29,13 +29,11 @@
 
     xmlns:android="http://schemas.android.com/apk/res/android"
 
+    xmlns:tools="http://schemas.android.com/tools"
+
     >
 
     <ImageView
-
-        xmlns:android="http://schemas.android.com/apk/res/android"
-
-        xmlns:tools="http://schemas.android.com/tools"
 
         android:layout_width="wrap_content"
 
@@ -43,9 +41,13 @@
 
         android:id="@+id/grid_iv_poster"
 
-        tools:src="@mipmap/ic_launcher"
+        android:contentDescription="@null"
 
-        android:contentDescription="@string/description_grid_poster"
+        android:padding="@dimen/space_between_content_areas"
+
+        android:scaleType="centerCrop"
+
+        tools:src="@mipmap/ic_launcher"
 
         />
 

@@ -212,7 +212,7 @@ public class Movie implements Parcelable {
      * http://image.tmdb.org/t/p/w185/poster_path
      * */
     // method getPosterPath
-    private String getPosterPath() { return getPoster_path(); }
+    public String getPosterPath() { return getPoster_path(); }
 
     /** Gets the movie's synopsis. */
     // method getSynopsis

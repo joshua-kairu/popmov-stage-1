@@ -23,14 +23,16 @@
 
 <!-- strings. -->
 
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <string name="app_name">PopMov</string>
 
-    <!-- Content descriptions -->
+    <!-- A11y -->
 
     <string name="description_detail_poster">Movie poster</string>
 
-    <string name="description_grid_poster">Grid item movie poster</string>
+    <string name="a11y_grid_poster">
+        Poster: <xliff:g id = "movie_title">%1$s</xliff:g>
+    </string>
 
 </resources>
