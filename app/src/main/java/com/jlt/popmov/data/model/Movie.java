@@ -54,7 +54,6 @@ public class Movie implements Parcelable {
         // newArray
         public Movie[] newArray( int size ) { return new Movie[ size ]; }
 
-
     }; // end new Parcelable.Creator< Movie >
 
     /* Integers */
@@ -66,40 +65,44 @@ public class Movie implements Parcelable {
     /* Primitives */
 
     /** The movie's user rating, out of 10. */
-    private float vote_average;
+    private float mUserRating;
+
+    /** The movie's unique ID in TMDB */
+    private long mID;
 
     /* Strings */
 
-    private String title; // ditto
+    private String mTitle; // ditto
 
     /** The movie's release date, in the form 2016-12-31. */
-    private String release_date;
+    private String mReleaseDate;
 
     /**
      * The path to the movie's poster.
      * To use this path, build a Url that looks like this:
      * http://image.tmdb.org/t/p/w185/poster_path
      * */
-    private String poster_path;
+    private String mPosterPath;
 
     /** The movie's synopsis. */
-    private String overview;
+    private String mSynopsis;
 
     /* CONSTRUCTOR */
 
     // begin default constructor
-    public Movie( String title, String release_date, String overview, float vote_average,
-                  String poster_path ) {
+    public Movie( long id, String title, String releaseDate, String synopsis, float userRating,
+                  String posterPath ) {
 
         // 0. initialize members
 
         // 0. initialize members
 
+        setID( id );
         setTitle( title );
-        setRelease_date( release_date );
-        setOverview( overview );
-        setVote_average( vote_average );
-        setPoster_path( poster_path );
+        setReleaseDate( releaseDate );
+        setSynopsis( synopsis );
+        setUserRating( userRating );
+        setPosterPath( posterPath );
 
     } // end default constructor
 
@@ -111,11 +114,12 @@ public class Movie implements Parcelable {
         // 0. initialize members from parcel
 
         // Parcel reads need to be in the same order as Parcel writes
+        setID( inParcel.readLong() );
         setTitle( inParcel.readString() );
-        setRelease_date( inParcel.readString() );
-        setOverview( inParcel.readString() );
-        setVote_average( inParcel.readFloat() );
-        setPoster_path( inParcel.readString() );
+        setReleaseDate( inParcel.readString() );
+        setSynopsis( inParcel.readString() );
+        setUserRating( inParcel.readFloat() );
+        setPosterPath( inParcel.readString() );
 
     } // end parcel constructor
 
@@ -123,55 +127,61 @@ public class Movie implements Parcelable {
     
     /* Getters and Setters */
 
-    // getter for the overview
-    private String getOverview() {
-        return overview;
+    // getter for the mSynopsis
+    public String getSynopsis() {
+        return mSynopsis;
     }
 
-    // setter for the overview
-    private void setOverview( String overview ) {
-        this.overview = overview;
+    // setter for the mSynopsis
+    public void setSynopsis( String synopsis ) {
+        mSynopsis = synopsis;
     }
 
     // getter for the poster path
-    private String getPoster_path() {
-        return poster_path;
+    public String getPosterPath() {
+        return mPosterPath;
     }
 
     // setter for the poster path
-    private void setPoster_path( String poster_path ) {
-        this.poster_path = poster_path;
+    public void setPosterPath( String posterPath ) {
+        mPosterPath = posterPath;
     }
 
     // getter for the release date
-    private String getRelease_date() {
-        return release_date;
+    public String getReleaseDate() {
+        return mReleaseDate;
     }
 
     // setter for the release date
-    private void setRelease_date( String release_date ) {
-        this.release_date = release_date;
+    public void setReleaseDate( String releaseDate ) {
+        mReleaseDate = releaseDate;
     }
 
     // getter for the title
     public String getTitle() {
-        return title;
+        return mTitle;
     }
 
     // setter for the title
     public void setTitle( String title ) {
-        this.title = title;
+        mTitle = title;
     }
 
     // getter for the vote average
-    private float getVote_average() {
-        return vote_average;
+    public float getUserRating() {
+        return mUserRating;
     }
 
     // setter for the vote average
-    private void setVote_average( float vote_average ) {
-        this.vote_average = vote_average;
+    public void setUserRating( float userRating ) {
+        mUserRating = userRating;
     }
+
+    // getter for the id
+    public long getID() { return mID; }
+
+    // setter for the id
+    public void setID( long id ) { mID = id; }
 
     /* Overrides */
 
@@ -185,11 +195,12 @@ public class Movie implements Parcelable {
         // 0. write members to the parcel
 
         // Parcel writes need to be in the same order as Parcel reads
+        destParcel.writeLong( getID() );
         destParcel.writeString( getTitle() );
-        destParcel.writeString( getRelease_date() );
-        destParcel.writeString( getOverview() );
-        destParcel.writeFloat( getVote_average() );
-        destParcel.writeString( getPoster_path() );
+        destParcel.writeString( getReleaseDate() );
+        destParcel.writeString( getSynopsis() );
+        destParcel.writeFloat( getUserRating() );
+        destParcel.writeString( getPosterPath() );
 
     } // end writeToParcel
 
@@ -204,23 +215,6 @@ public class Movie implements Parcelable {
     }
 
     /* Other Methods */
-
-    /**
-     * Gets the movie's poster path.
-     *
-     * To use this path, build a Url that looks like this:
-     * http://image.tmdb.org/t/p/w185/poster_path
-     * */
-    // method getPosterPath
-    public String getPosterPath() { return getPoster_path(); }
-
-    /** Gets the movie's synopsis. */
-    // method getSynopsis
-    public String getSynopsis() { return getOverview(); }
-
-    /** Gets the movie's user rating. This value is out of 10. */
-    // method getUserRating
-    public float getUserRating() { return getVote_average(); }
 
     /* INNER CLASSES */
 
