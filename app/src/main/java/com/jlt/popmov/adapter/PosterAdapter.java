@@ -32,6 +32,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
 import com.jlt.popmov.R;
+import com.jlt.popmov.data.Utility;
 import com.jlt.popmov.data.model.Movie;
 import com.jlt.popmov.databinding.GridItemPosterBinding;
 import com.squareup.picasso.Picasso;
@@ -143,7 +144,7 @@ public class PosterAdapter extends BaseAdapter {
         // 3. put the correct image into the image view
 
         Picasso.with( mContext )
-                .load( mMovies[ position ].getPosterPath() )
+                .load( Utility.getPosterUri( mMovies[ position ].getPosterPath() ) )
                 .placeholder( R.attr.colorPrimaryDark )
                 .into( imageView );
 
