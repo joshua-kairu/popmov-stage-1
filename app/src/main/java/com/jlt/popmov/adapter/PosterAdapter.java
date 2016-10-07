@@ -37,6 +37,8 @@ import com.jlt.popmov.data.model.Movie;
 import com.jlt.popmov.databinding.GridItemPosterBinding;
 import com.squareup.picasso.Picasso;
 
+import java.util.List;
+
 /**
  * A {@link android.widget.BaseAdapter} to populate the posters.
  * */
@@ -51,18 +53,18 @@ public class PosterAdapter extends BaseAdapter {
         
     /* VARIABLES */
 
-    /* Arrays */
-
-    private Movie[] mMovies; // ditto
-
     /* Contexts */
 
     private Context mContext; // ditto
 
+    /* Lists */
+
+    private List< Movie > mMovies; // ditto
+
     /* CONSTRUCTOR */
 
     // begin constructor
-    public PosterAdapter( Context context, Movie[] movies ) {
+    public PosterAdapter( Context context, List< Movie > movies ) {
 
         // 0. initialize members
 
@@ -81,7 +83,7 @@ public class PosterAdapter extends BaseAdapter {
     /* Overrides */
 
     @Override
-    public int getCount() { return mMovies.length; }
+    public int getCount() { return mMovies.size(); }
 
     @Override
     public Object getItem( int position ) {
@@ -144,14 +146,14 @@ public class PosterAdapter extends BaseAdapter {
         // 3. put the correct image into the image view
 
         Picasso.with( mContext )
-                .load( Utility.getPosterUri( mMovies[ position ].getPosterPath() ) )
+                .load( Utility.getPosterUri( mMovies.get(  position ).getPosterPath() ) )
                 .placeholder( R.attr.colorPrimaryDark )
                 .into( imageView );
 
         // 4. put the correct content description
 
         imageView.setContentDescription(
-                mContext.getString( R.string.a11y_grid_poster, mMovies[ position ].getTitle() )
+                mContext.getString( R.string.a11y_grid_poster, mMovies.get( position ).getTitle() )
         );
 
         // last. return the image view
@@ -161,6 +163,33 @@ public class PosterAdapter extends BaseAdapter {
     } // end getView
 
     /* Other Methods */
+
+    /**
+     * (Comment copied from {@link android.widget.ArrayAdapter#addAll(Object[])})
+     * Adds the specified movies at the end of the movies array.
+     *
+     * @param movies The movies to add at the end of the movies array.
+     */
+    // begin method addAll
+    public void addAll( List< Movie > movies ) {
+
+        // 0. remove all current movies
+        // 1. add the parameter movies to the array
+        // 2. notify that the data has changed
+
+        // 0. remove all current movies
+
+        mMovies.clear();
+
+        // 1. add the parameter movies to the array
+
+        mMovies.addAll( movies );
+
+        // 2. notify that the data has changed
+
+        notifyDataSetChanged();
+
+    } // end method addAll
     
     /* INNER CLASSES */
 
