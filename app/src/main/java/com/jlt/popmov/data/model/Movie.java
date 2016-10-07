@@ -65,7 +65,7 @@ public class Movie implements Parcelable {
     /* Primitives */
 
     /** The movie's user rating, out of 10. */
-    private float mUserRating;
+    private double mUserRating;
 
     /** The movie's unique ID in TMDB */
     private long mID;
@@ -90,7 +90,7 @@ public class Movie implements Parcelable {
     /* CONSTRUCTOR */
 
     // begin default constructor
-    public Movie( long id, String title, String releaseDate, String synopsis, float userRating,
+    public Movie( long id, String title, String releaseDate, String synopsis, double userRating,
                   String posterPath ) {
 
         // 0. initialize members
@@ -168,12 +168,12 @@ public class Movie implements Parcelable {
     }
 
     // getter for the vote average
-    public float getUserRating() {
+    public double getUserRating() {
         return mUserRating;
     }
 
     // setter for the vote average
-    public void setUserRating( float userRating ) {
+    public void setUserRating( double userRating ) {
         mUserRating = userRating;
     }
 
@@ -199,7 +199,7 @@ public class Movie implements Parcelable {
         destParcel.writeString( getTitle() );
         destParcel.writeString( getReleaseDate() );
         destParcel.writeString( getSynopsis() );
-        destParcel.writeFloat( getUserRating() );
+        destParcel.writeDouble( getUserRating() );
         destParcel.writeString( getPosterPath() );
 
     } // end writeToParcel
