@@ -28,6 +28,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.jlt.popmov.BuildConfig;
+import com.jlt.popmov.adapter.PosterAdapter;
 import com.jlt.popmov.data.model.Movie;
 
 import org.json.JSONArray;
@@ -40,6 +41,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * An {@link android.os.AsyncTask} to fetch the movies from TMDB.
@@ -50,7 +53,7 @@ import java.net.URL;
  * Returns an array of movies gotten from TMDB.
  * */
 // begin class FetchMovieTask
-public class FetchMovieTask extends AsyncTask< String, Void, Movie[] > {
+public class FetchMovieTask extends AsyncTask< String, Void, List< Movie > > {
 
     /* CONSTANTS */
     
@@ -64,7 +67,12 @@ public class FetchMovieTask extends AsyncTask< String, Void, Movie[] > {
     private static final String LOG_TAG = FetchMovieTask.class.getSimpleName();
         
     /* VARIABLES */
-    
+
+    /* Poster Adapters */
+
+    /** Adapter that controls the posters in the host fragment. */
+    private PosterAdapter mPosterAdapter;
+
     /* CONSTRUCTOR */
     
     /* METHODS */
@@ -75,7 +83,7 @@ public class FetchMovieTask extends AsyncTask< String, Void, Movie[] > {
 
     @Override
     // begin doInBackground
-    protected Movie[] doInBackground( String... params ) {
+    protected List< Movie > doInBackground( String... params ) {
 
         // 0. if there is no sort order, just stop
         // 1. initialize
@@ -227,7 +235,29 @@ public class FetchMovieTask extends AsyncTask< String, Void, Movie[] > {
         } // end finally
 
     } // end doInBackground
-    
+
+    @Override
+    // begin onPostExecute
+    protected void onPostExecute( List< Movie > fetchedMovies ) {
+
+        // 0. super stuff
+        // 1. remove old movies from adapter
+        // 2. put fetched movies into adapter
+
+        // 0. super stuff
+
+        super.onPostExecute( fetchedMovies );
+
+        // 1. remove old movies from adapter
+
+        mPosterAdapter.clear();
+
+        // 2. put fetched movies into adapter
+
+        mPosterAdapter.addAll( fetchedMovies );
+
+    } // end onPostExecute
+
     /* Other Methods */
 
     /**
@@ -235,10 +265,10 @@ public class FetchMovieTask extends AsyncTask< String, Void, Movie[] > {
      *
      * @param movieJSONString The string having the movie JSON
      *
-     * @return An array of {@link Movie} objects contained in the JSON
+     * @return An {@link List} of {@link Movie} objects contained in the JSON
      * */
     // begin method getMovieDataFromJSON
-    private Movie[] getMovieDataFromJSON( String movieJSONString ) throws JSONException {
+    private List< Movie > getMovieDataFromJSON( String movieJSONString ) throws JSONException {
 
         /*
 
@@ -280,7 +310,7 @@ public class FetchMovieTask extends AsyncTask< String, Void, Movie[] > {
         // 0g. vote average
         // 1. extract data from JSON
         // 1a. get the list of movies from the JSON
-        // 1b. have an array of movies matching the JSON list
+        // 1b. have an array list of movies matching the JSON list
         // 1b1. get a movie JSON item
         // 1b2. create a movie object from it
         // 1b3. add that object to the movie array
@@ -312,9 +342,9 @@ public class FetchMovieTask extends AsyncTask< String, Void, Movie[] > {
 
         JSONArray movieListJsonArray = movieJsonObject.getJSONArray( MOVIE_LIST );
 
-        // 1b. have an array of movies matching the JSON list
+        // 1b. have an array list of movies matching the JSON list
 
-        Movie[] movies = new Movie[ movieListJsonArray.length() ];
+        List< Movie > movies = new ArrayList< Movie >( movieListJsonArray.length() );
 
         // 1b. get the list of movies from the JSON
 
@@ -352,7 +382,7 @@ public class FetchMovieTask extends AsyncTask< String, Void, Movie[] > {
 
             // 1b3. add that object to the movie array
 
-            movies[ i ] = aMovie;
+            movies.add( aMovie );
 
         } // end for to initialize a movie from the JSON array
 
