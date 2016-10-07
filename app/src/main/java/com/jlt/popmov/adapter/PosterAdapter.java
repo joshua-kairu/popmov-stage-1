@@ -28,6 +28,7 @@ import android.databinding.DataBindingUtil;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
@@ -173,23 +174,39 @@ public class PosterAdapter extends BaseAdapter {
     // begin method addAll
     public void addAll( List< Movie > movies ) {
 
-        // 0. remove all current movies
-        // 1. add the parameter movies to the array
-        // 2. notify that the data has changed
+        // 0. add the parameter movies to the array
+        // 1. notify that the data has changed
 
-        // 0. remove all current movies
-
-        mMovies.clear();
-
-        // 1. add the parameter movies to the array
+        // 0. add the parameter movies to the array
 
         mMovies.addAll( movies );
 
-        // 2. notify that the data has changed
+        // 1. notify that the data has changed
 
         notifyDataSetChanged();
 
     } // end method addAll
+
+    /**
+     * (Copied from {@link ArrayAdapter#clear()}).
+     *
+     * Remove all elements from the list.
+     * */
+    // begin method clear
+    public void clear() {
+
+        // 0. empty the movies list
+        // 1. notify of data change
+
+        // 0. empty the movies list
+
+        mMovies.clear();
+
+        // 1. notify of data change
+
+        notifyDataSetChanged();
+
+    } // end method clear
     
     /* INNER CLASSES */
 
