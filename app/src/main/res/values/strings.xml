@@ -35,4 +35,12 @@
         Poster: <xliff:g id = "movie_title">%1$s</xliff:g>
     </string>
 
+    <!-- Preferences -->
+
+    <!-- key for storing the most popular sort order preference [CHAR LIMIT = NONE] -->
+    <string name="pref_sort_order_most_popular_key" translatable="false">popular</string>
+
+    <!-- key for storing the highest rated sort order preference [CHAR LIMIT = NONE] -->
+    <string name="pref_sort_order_highest_rated_key" translatable="false">top_rated</string>
+
 </resources>
