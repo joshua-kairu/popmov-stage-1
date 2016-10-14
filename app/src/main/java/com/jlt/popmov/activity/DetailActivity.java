@@ -26,10 +26,13 @@ package com.jlt.popmov.activity;
 import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.jlt.popmov.R;
 import com.jlt.popmov.data.model.Movie;
 import com.jlt.popmov.fragment.DetailFragment;
+import com.jlt.popmov.fragment.SettingsFragment;
 
 /**
  * Activity to show the details of a movie.
@@ -89,7 +92,57 @@ public class DetailActivity extends AppCompatActivity {
         } // end if the saved state is null
 
     } // end onCreate
-    
+
+    @Override
+    // begin onCreateOptionsMenu
+    public boolean onCreateOptionsMenu( Menu menu ) {
+
+        // 0. super stuff
+        // 1. use the detail activity menu
+
+        // 0. super stuff
+
+        super.onCreateOptionsMenu( menu );
+
+        // 1. use the detail activity menu
+
+        getMenuInflater().inflate( R.menu.menu_activity_detail, menu );
+
+        return true;
+
+    } // end onCreateOptionsMenu
+
+    @Override
+    // begin onOptionsItemSelected
+    public boolean onOptionsItemSelected( MenuItem item ) {
+
+        // 0. if the settings is selected
+        // 0a. switch to the settings fragment
+        // 0last. return true
+        // last. return super
+
+        // 0. if the settings is selected
+
+        // begin if settings is selected
+        if ( item.getItemId() == R.id.action_settings ) {
+
+            // 0a. switch to the settings fragment
+
+            getSupportFragmentManager().beginTransaction()
+                    .add( R.id.ad_fl_container, new SettingsFragment() ).commit();
+
+            // 0last. return true
+
+            return true;
+
+        } // end if settings is selected
+
+        // last. return super
+
+        return super.onOptionsItemSelected( item );
+
+    } // end onOptionsItemSelected
+
     /* Other Methods */
     
     /* INNER CLASSES */

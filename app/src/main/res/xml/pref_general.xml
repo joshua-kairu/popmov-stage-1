@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+
 <!--
 
  PopMov
@@ -21,20 +23,30 @@
 
  -->
 
-<!-- styles. -->
+<!-- preferences. -->
 
-<resources>
+<!-- preferences for sort order -->
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+<PreferenceScreen
 
-        <item name="colorPrimary">@color/primary</item>
+    xmlns:android="http://schemas.android.com/apk/res/android"
 
-        <item name="colorPrimaryDark">@color/primary_dark</item>
+    >
 
-        <item name="colorAccent">@color/accent</item>
+    <!-- sort order -->
 
-        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
-    </style>
+    <ListPreference
 
-</resources>
+        android:defaultValue="@string/pref_sort_order_most_popular_entry_value"
+
+        android:title="@string/pref_sort_order_title"
+
+        android:entries="@array/sort_order_entries"
+
+        android:entryValues="@array/sort_order_entry_values"
+
+        android:key="@string/pref_sort_order_key"
+
+        />
+
+</PreferenceScreen>

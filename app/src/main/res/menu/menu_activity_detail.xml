@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+
 <!--
 
  PopMov
@@ -21,20 +23,28 @@
 
  -->
 
-<!-- styles. -->
+<!-- detail activity menu -->
 
-<resources>
+<!-- Shows settings -->
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+<menu
 
-        <item name="colorPrimary">@color/primary</item>
+    xmlns:app="http://schemas.android.com/apk/res-auto"
 
-        <item name="colorPrimaryDark">@color/primary_dark</item>
+    xmlns:android="http://schemas.android.com/apk/res/android"
 
-        <item name="colorAccent">@color/accent</item>
+    >
 
-        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
-    </style>
+    <!-- Settings -->
 
-</resources>
+    <item
+
+        android:title="@string/action_settings"
+
+        android:id="@+id/action_settings"
+
+        app:showAsAction="never"
+
+        />
+
+</menu>

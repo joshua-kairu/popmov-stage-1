@@ -30,22 +30,36 @@
     <!-- Activity titles -->
 
     <!-- The title for the detail activity [CHAR LIMIT = 25] -->
-    <string name="detail_activity_title">Detail</string>
+    <string name="detail_activity_title">Movie Detail</string>
 
     <!-- A11y -->
-
-    <string name="description_detail_poster">Movie poster</string>
 
     <string name="a11y_grid_poster">
         Poster: <xliff:g id = "movie_title">%1$s</xliff:g>
     </string>
 
+    <!-- Menus -->
+
+    <string name="action_settings">Settings</string>
+
     <!-- Preferences -->
 
-    <!-- key for storing the most popular sort order preference [CHAR LIMIT = NONE] -->
-    <string name="pref_sort_order_most_popular_key" translatable="false">popular</string>
+    <!-- title for the sort order preference [CHAR LIMIT = 20] -->
+    <string name="pref_sort_order_title">Sort Order</string>
 
-    <!-- key for storing the highest rated sort order preference [CHAR LIMIT = NONE] -->
-    <string name="pref_sort_order_highest_rated_key" translatable="false">top_rated</string>
+    <!-- key for the sort order preference -->
+    <string name="pref_sort_order_key" translatable="false">sort order</string>
+
+    <!-- label, or entry, for displaying the most popular sort order preference [CHAR LIMIT = 25] -->
+    <string name="pref_sort_order_most_popular_entry">Most Popular</string>
+
+    <!-- label, or entry, for displaying the highest rated sort order preference [CHAR LIMIT = 25] -->
+    <string name="pref_sort_order_highest_rated_entry">Highest Rated</string>
+
+    <!-- key, or entry value, for storing the most popular sort order preference [CHAR LIMIT = NONE] -->
+    <string name="pref_sort_order_most_popular_entry_value" translatable="false">popular</string>
+
+    <!-- key, or entry value, for storing the highest rated sort order preference [CHAR LIMIT = NONE] -->
+    <string name="pref_sort_order_highest_rated_entry_value" translatable="false">top_rated</string>
 
 </resources>

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+
 <!--
 
  PopMov
@@ -21,20 +23,27 @@
 
  -->
 
-<!-- styles. -->
+<!-- arrays. -->
 
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <!-- entries for the sort order preference -->
 
-        <item name="colorPrimary">@color/primary</item>
+    <string-array name="sort_order_entries">
 
-        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item>@string/pref_sort_order_highest_rated_entry</item>
 
-        <item name="colorAccent">@color/accent</item>
+        <item>@string/pref_sort_order_most_popular_entry</item>
 
-        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
-    </style>
+    </string-array>
 
+    <!-- entry values for the sort order preference -->
+
+    <string-array name="sort_order_entry_values">
+
+        <item>@string/pref_sort_order_highest_rated_entry_value</item>
+
+        <item>@string/pref_sort_order_most_popular_entry_value</item>
+
+    </string-array>
 </resources>

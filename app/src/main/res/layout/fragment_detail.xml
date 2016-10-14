@@ -87,7 +87,7 @@
 
             android:layout_below="@id/detail_tv_title"
 
-            android:contentDescription="@string/description_detail_poster"
+            android:contentDescription="@null"
 
             android:paddingTop="@dimen/space_between_content_areas"
 

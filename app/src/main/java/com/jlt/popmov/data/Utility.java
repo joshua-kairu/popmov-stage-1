@@ -28,6 +28,8 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.preference.PreferenceManager;
 
+import com.jlt.popmov.R;
+
 /**
  * A utility class to handle preferences and formatting
  * */
@@ -107,7 +109,8 @@ public class Utility {
 
         // 1. return the preferred sort order, default popular
 
-        return "popular";
+        return sharedPreferences.getString( context.getString( R.string.pref_sort_order_key ),
+                context.getString( R.string.pref_sort_order_most_popular_entry_value ) );
 
     } // end method getPreferredSortOrder
 

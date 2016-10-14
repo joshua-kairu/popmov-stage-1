@@ -49,12 +49,15 @@ import java.util.List;
  * */
 // begin fragment PostersFragment
 public class PostersFragment extends Fragment {
-    
+
     /* CONSTANTS */
     
     /* Integers */
     
     /* Strings */
+
+    /** Fragment tag. */
+    public static final String POSTER_FRAGMENT_TAG = "POSTER_FRAGMENT_TAG";
 
     /* VARIABLES */
 
@@ -180,6 +183,16 @@ public class PostersFragment extends Fragment {
         fetchMovieTask.execute( preferredSortOrder );
 
     } // end method updateMovies
+
+    /** Helper method to respond to change in the sort order. */
+    // begin method onSortOrderChanged
+    public void onSortOrderChanged() {
+
+        // 0. update the movies
+
+        updateMovies();
+
+    } // end method onSortOrderChanged
     
     /* INNER CLASSES */
 
