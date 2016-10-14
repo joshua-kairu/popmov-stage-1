@@ -23,7 +23,10 @@
 
 package com.jlt.popmov.data;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.Uri;
+import android.preference.PreferenceManager;
 
 /**
  * A utility class to handle preferences and formatting
@@ -84,7 +87,30 @@ public class Utility {
                 .build();
 
     } // end method getPosterUri
-    
+
+    /**
+     * Helper method to get the preferred sort order from preferences.
+     *
+     * @param context Android {@link android.content.Context}
+     *
+     * @return A string having the preferred sort order
+     * */
+    // begin method getPreferredSortOrder
+    public static String getPreferredSortOrder( Context context ) {
+
+        // 0. get the preferences
+        // 1. return the preferred sort order, default popular
+
+        // 0. get the preferences
+
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences( context );
+
+        // 1. return the preferred sort order, default popular
+
+        return "popular";
+
+    } // end method getPreferredSortOrder
+
     /* INNER CLASSES */
 
 } // end class Utility
