@@ -88,7 +88,7 @@ public class PosterAdapter extends BaseAdapter {
 
     @Override
     public Object getItem( int position ) {
-        return null;
+        return mMovies.get( position );
     }
 
     @Override
@@ -148,7 +148,7 @@ public class PosterAdapter extends BaseAdapter {
 
         Picasso.with( mContext )
                 .load( Utility.getPosterUri( mMovies.get(  position ).getPosterPath() ) )
-                .placeholder( R.attr.colorPrimaryDark )
+                .placeholder( R.color.primary_dark )
                 .into( imageView );
 
         // 4. put the correct content description
@@ -207,7 +207,7 @@ public class PosterAdapter extends BaseAdapter {
         notifyDataSetChanged();
 
     } // end method clear
-    
+
     /* INNER CLASSES */
 
 } // end class PosterAdapter

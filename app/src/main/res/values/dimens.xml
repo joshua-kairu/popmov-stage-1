@@ -112,8 +112,7 @@
 
     <!-- Grid -->
 
-    <dimen name="grid_column_width">90dp</dimen>
-    <dimen name="grid_item_spacing">10dp</dimen>
+    <dimen name="grid_item_spacing">1dp</dimen>
 
     <dimen name="title_height">192dp</dimen>
 

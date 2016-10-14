@@ -45,8 +45,6 @@
 
         android:id="@+id/fp_gv_posters"
 
-        android:columnWidth="@dimen/grid_column_width"
-
         android:numColumns="auto_fit"
 
         android:verticalSpacing="@dimen/grid_item_spacing"

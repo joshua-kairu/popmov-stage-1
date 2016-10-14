@@ -35,19 +35,19 @@
 
     <ImageView
 
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
 
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
 
         android:id="@+id/grid_iv_poster"
 
         android:contentDescription="@null"
 
-        android:padding="@dimen/space_between_content_areas"
-
         android:scaleType="centerCrop"
 
         tools:src="@mipmap/ic_launcher"
+
+        android:adjustViewBounds="true"
 
         />
 

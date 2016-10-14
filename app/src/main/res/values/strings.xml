@@ -27,6 +27,11 @@
 
     <string name="app_name">PopMov</string>
 
+    <!-- Activity titles -->
+
+    <!-- The title for the detail activity [CHAR LIMIT = 25] -->
+    <string name="detail_activity_title">Detail</string>
+
     <!-- A11y -->
 
     <string name="description_detail_poster">Movie poster</string>

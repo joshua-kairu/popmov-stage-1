@@ -27,11 +27,11 @@
 
 <resources>
 
-    <color name="teal_500">#009688</color>
+    <color name="primary">#009688</color> <!-- Teal 500 -->
 
-    <color name="teal_700">#00796B</color>
+    <color name="primary_dark">#00796B</color> <!-- Teal 700 -->
 
     <!-- inverse based on inverting the primary color using gimp. -->
-    <color name="pink_a200">#FF4081</color>
+    <color name="accent">#FF4081</color> <!-- Pink A200 -->
 
 </resources>
