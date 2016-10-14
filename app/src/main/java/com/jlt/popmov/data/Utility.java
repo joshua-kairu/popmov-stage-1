@@ -27,8 +27,14 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.preference.PreferenceManager;
+import android.util.Log;
 
 import com.jlt.popmov.R;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 /**
  * A utility class to handle preferences and formatting
@@ -41,7 +47,12 @@ public class Utility {
     /* Integers */
     
     /* Strings */
-        
+
+    /**
+     * The logger.
+     */
+    private static final String LOG_TAG = Utility.class.getSimpleName();
+
     /* VARIABLES */
     
     /* CONSTRUCTOR */
@@ -113,6 +124,45 @@ public class Utility {
                 context.getString( R.string.pref_sort_order_most_popular_entry_value ) );
 
     } // end method getPreferredSortOrder
+
+    /**
+     * Helper method to format the movie release date so that it appears as required by the screenshots.
+     *
+     * TMDB JSON gives the movie release date in the form YYYY-MM-DD, for example 2016-06-16.
+     * The screenshots need the date to be in the form YYYY, for example 2016.
+     *
+     * */
+    // begin method getFormattedReleaseDate
+    public static String getFormattedReleaseDate ( String releaseDate ) {
+
+        // 0. convert the release date to a date object
+        // 1. set up a date format with the needed format
+        // 2. return a formatted date string
+
+        // begin trying to get the formatted date string
+        try {
+
+            // 0. convert the release date to a date object
+
+            Date actualReleaseDate = SimpleDateFormat.getDateInstance().parse( releaseDate );
+
+            // 1. set up a date format with the needed format
+            // 2. return a formatted date string
+
+            return new SimpleDateFormat( "yyyy", Locale.getDefault() ).format( actualReleaseDate );
+
+        } // end trying to get the formatted date string
+
+        // begin catching parse issues
+        catch ( ParseException e ) {
+
+            Log.e( LOG_TAG, "getFormattedReleaseDate: Error parsing date.", e );
+
+            return null;
+
+        } // end catching parse issues
+
+    } // end method getFormattedReleaseDate
 
     /* INNER CLASSES */
 
