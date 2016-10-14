@@ -33,7 +33,6 @@ import android.widget.Toast;
 
 import com.jlt.popmov.R;
 import com.jlt.popmov.data.model.Movie;
-import com.jlt.popmov.databinding.FragmentDetailBinding;
 
 /**
  * {@link Fragment} to show the details of a selected movie
@@ -51,10 +50,6 @@ public class DetailFragment extends Fragment {
     public static final String ARGUMENT_MOVIE = "ARGUMENT_MOVIE";
 
     /* VARIABLES */
-
-    /* Fragment Detail Bindings */
-
-    private FragmentDetailBinding binding; // ditto
 
     /* Movies */
 
@@ -87,8 +82,8 @@ public class DetailFragment extends Fragment {
 
         // 1. use the detail fragment layout
 
-        binding = DataBindingUtil.inflate( LayoutInflater.from( getActivity() ),
-                R.layout.fragment_detail, container, false );
+        DataBindingUtil.inflate( LayoutInflater.from( getActivity() ), R.layout.fragment_detail,
+                container, false );
 
         // 2. for now, just toast the user the title of the movie
 

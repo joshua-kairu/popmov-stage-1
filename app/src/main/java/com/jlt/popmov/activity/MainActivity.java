@@ -28,7 +28,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.jlt.popmov.R;
-import com.jlt.popmov.databinding.ActivityMainBinding;
 import com.jlt.popmov.fragment.PostersFragment;
 
 /**
@@ -42,17 +41,8 @@ public class MainActivity extends AppCompatActivity {
     /* Integers */
     
     /* Strings */
-
-    /**
-     * The logger.
-     */
-    private static final String LOG_TAG = MainActivity.class.getSimpleName();
     
     /* VARIABLES */
-
-    /* Activity Main Bindings */
-
-    private ActivityMainBinding binding; // ditto
 
     /* Strings */
 

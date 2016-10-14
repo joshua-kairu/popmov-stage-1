@@ -56,24 +56,7 @@ public class PostersFragment extends Fragment {
     
     /* Strings */
 
-    /**
-     * The logger.
-     */
-    private static final String LOG_TAG = PostersFragment.class.getSimpleName();
-        
     /* VARIABLES */
-
-    /* Fetch Movie Tasks */
-
-    private FetchMovieTask mFetchMovieTask; // ditto
-
-    /* Fragment Posters Bindings */
-
-    private FragmentPostersBinding binding; // ditto
-
-    /* Lists */
-
-    private List< Movie > mMovies; // ditto
 
     /* Poster Adapters */
 
@@ -105,7 +88,7 @@ public class PostersFragment extends Fragment {
 
         // 0. use the posters fragment layout
 
-        binding = DataBindingUtil.inflate( LayoutInflater.from( getActivity() ),
+        FragmentPostersBinding binding = DataBindingUtil.inflate( LayoutInflater.from( getActivity() ),
                 R.layout.fragment_posters, container, false );
 
         // 1. get the grid
@@ -114,7 +97,7 @@ public class PostersFragment extends Fragment {
 
         // 2. initialize the movies list
 
-        mMovies = new ArrayList<>();
+        List< Movie > mMovies = new ArrayList<>();
 
         // 3. use the poster adapter
 
