@@ -74,6 +74,20 @@ public class FetchMovieTask extends AsyncTask< String, Void, List< Movie > > {
     private PosterAdapter mPosterAdapter;
 
     /* CONSTRUCTOR */
+
+    /**
+     * Default constructor
+     *
+     * @param posterAdapter The {@link PosterAdapter} to hold the fetched movies
+     * */
+    // begin constructor
+    public FetchMovieTask( PosterAdapter posterAdapter ) {
+
+        // 0. initialize members
+
+        mPosterAdapter = posterAdapter;
+
+    } // end constructor
     
     /* METHODS */
     
