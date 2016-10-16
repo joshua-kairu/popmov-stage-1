@@ -144,7 +144,8 @@ public class Utility {
 
             // 0. convert the release date to a date object
 
-            Date actualReleaseDate = SimpleDateFormat.getDateInstance().parse( releaseDate );
+            Date actualReleaseDate = new SimpleDateFormat( "yyyy-MM-DD", Locale.getDefault() )
+                    .parse( releaseDate );
 
             // 1. set up a date format with the needed format
             // 2. return a formatted date string
