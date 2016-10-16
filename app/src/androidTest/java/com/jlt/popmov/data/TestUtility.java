@@ -25,6 +25,7 @@ package com.jlt.popmov.data;
 
 import android.net.Uri;
 import android.test.AndroidTestCase;
+import android.util.Log;
 
 /**
  * A test for the correctness of {@link Utility} methods.
@@ -72,6 +73,30 @@ public class TestUtility extends AndroidTestCase {
                 posterUri.toString().equals( correctPosterUrl ) );
 
     } // end method testPosterUrl
+
+    /**
+     * Tests the correctness of the date gotten from
+     * {@link Utility#getFormattedReleaseDate(String)}.
+     * */
+    // begin method testReleaseDate
+    public void testReleaseDate() {
+
+        // 0. for a release date "2016-04-14" we should get "2016" as the release date
+
+        // 0. for a release date "2016-04-14" we should get "2016" as the release date
+
+        String releaseDate = "2016-04-14";
+        String correctReleaseDate = "2016";
+
+        String gottenReleaseDate = Utility.getFormattedReleaseDate( releaseDate );
+
+        Log.e( "testReleaseDate", gottenReleaseDate );
+        assertTrue( "Error: The gotten release date is " + gottenReleaseDate +
+                        " while the correct release date is " + correctReleaseDate,
+                gottenReleaseDate.equals( correctReleaseDate )
+        );
+
+    } // end method testReleaseDate
 
     /* INNER CLASSES */
 
