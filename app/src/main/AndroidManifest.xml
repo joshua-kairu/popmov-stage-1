@@ -82,6 +82,19 @@
 
             />
 
+        <!-- the settings activity -->
+
+        <!-- parent activity should always be the main activity -->
+        <activity
+
+            android:name=".activity.SettingsActivity"
+
+            android:label="@string/settings_activity_title"
+
+            android:parentActivityName=".activity.MainActivity"
+
+            />
+
     </application>
 
 </manifest>

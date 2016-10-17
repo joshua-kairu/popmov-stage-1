@@ -23,16 +23,16 @@
 
 package com.jlt.popmov.activity;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.jlt.popmov.R;
 import com.jlt.popmov.data.model.Movie;
 import com.jlt.popmov.fragment.DetailFragment;
-import com.jlt.popmov.fragment.SettingsFragment;
 
 /**
  * Activity to show the details of a movie.
@@ -117,7 +117,7 @@ public class DetailActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected( MenuItem item ) {
 
         // 0. if the settings is selected
-        // 0a. switch to the settings fragment
+        // 0a. switch to the settings activity (for phones for now)
         // 0last. return true
         // last. return super
 
@@ -126,10 +126,9 @@ public class DetailActivity extends AppCompatActivity {
         // begin if settings is selected
         if ( item.getItemId() == R.id.action_settings ) {
 
-            // 0a. switch to the settings fragment
+            // 0a. switch to the settings activity (for phones for now)
 
-            getSupportFragmentManager().beginTransaction()
-                    .add( R.id.ad_fl_container, new SettingsFragment() ).commit();
+            startActivity( new Intent( this, SettingsActivity.class ) );
 
             // 0last. return true
 

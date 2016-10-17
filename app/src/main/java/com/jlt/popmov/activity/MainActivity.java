@@ -23,6 +23,7 @@
 
 package com.jlt.popmov.activity;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -32,7 +33,6 @@ import android.view.MenuItem;
 import com.jlt.popmov.R;
 import com.jlt.popmov.data.Utility;
 import com.jlt.popmov.fragment.PostersFragment;
-import com.jlt.popmov.fragment.SettingsFragment;
 
 /**
  * The landing activity
@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected( MenuItem item ) {
 
         // 0. if the settings is selected
-        // 0a. switch to the settings fragment
+        // 0a. switch to the settings activity (for phones for now)
         // 0last. return true
         // last. return super
 
@@ -131,13 +131,11 @@ public class MainActivity extends AppCompatActivity {
         // begin if settings is selected
         if ( item.getItemId() == R.id.action_settings ) {
 
-            // 0a. switch to the settings fragment
+            // 0a. switch to the settings activity (for phones for now)
 
-            getSupportFragmentManager().beginTransaction()
-                    .replace( R.id.am_fl_container, new SettingsFragment() )
-                    .addToBackStack( null ).commit();
+            startActivity( new Intent( this, SettingsActivity.class ) );
 
-            // TODO: 10/14/16 do the replacing for a tab layout
+            // TODO: 10/14/16 do the replacing for a tablet layout
 
             // 0last. return true
 
