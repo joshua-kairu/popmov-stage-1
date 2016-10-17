@@ -66,8 +66,7 @@ public class MainActivity extends AppCompatActivity {
         // 0a. super things
         // 0b. store current sort order
         // 1. use the main activity layout
-        // 2. if this is the first run
-        // 2a. add the posters fragment
+        // 2. the posters fragment is added in XML
 
         // 0. preliminaries
 
@@ -83,18 +82,7 @@ public class MainActivity extends AppCompatActivity {
 
         DataBindingUtil.setContentView( this, R.layout.activity_main );
 
-        // 2. if this is the first run
-
-        // begin if the saved instance is null
-        if ( savedInstanceState == null ) {
-
-            // 2a. add the posters fragment
-
-            getSupportFragmentManager().beginTransaction()
-                    .add( R.id.am_fl_container, new PostersFragment() )
-                    .commit();
-
-        } // end if the saved instance is null
+        // 2. the posters fragment is added in XML
 
     } // end onCreate
 

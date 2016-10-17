@@ -29,10 +29,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.jlt.popmov.R;
+import com.jlt.popmov.data.Utility;
 import com.jlt.popmov.data.model.Movie;
+import com.jlt.popmov.databinding.FragmentDetailBinding;
 
 /**
  * {@link Fragment} to show the details of a selected movie
@@ -73,7 +74,7 @@ public class DetailFragment extends Fragment {
 
         // 0. get the movie from the arguments
         // 1. use the detail fragment layout
-        // 2. for now, just toast the user the title of the movie
+        // 2. show the movie details
         // last. return the inflated view
 
         // 0. get the movie from the arguments
@@ -82,12 +83,12 @@ public class DetailFragment extends Fragment {
 
         // 1. use the detail fragment layout
 
-        DataBindingUtil.inflate( LayoutInflater.from( getActivity() ), R.layout.fragment_detail,
-                container, false );
+        FragmentDetailBinding binding = DataBindingUtil.inflate( LayoutInflater.from( getActivity() ),
+                R.layout.fragment_detail, container, false );
 
-        // 2. for now, just toast the user the title of the movie
+        // 2. show the movie details
 
-        Toast.makeText( getActivity(), mMovie.getTitle(), Toast.LENGTH_SHORT ).show();
+        binding.detailTvDate.setText( Utility.getFormattedReleaseDate( mMovie.getReleaseDate() ) );
 
         // last. return the inflated view
 
