@@ -31,6 +31,7 @@ import android.util.Log;
 
 import com.jlt.popmov.R;
 
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -164,6 +165,53 @@ public class Utility {
         } // end catching parse issues
 
     } // end method getFormattedReleaseDate
+
+    /**
+     * Helper method to determine if the Internet is up.
+     *
+     * It does this by checking the result of a ping.
+     *
+     * Thanks to http://stackoverflow.com/questions/1560788/how-to-check-internet-access-on-android-inetaddress-never-times-out/27312494#27312494
+     *
+     * @return A boolean depending on the success of the ping.
+     * */
+    // begin method isInternetUp
+    public static boolean isInternetUp() {
+
+        // 0. get a runtime
+        // 1. start a ping
+        // 2. there is net if the ping returns 0
+        // last. exceptions and other things mean no net
+
+        // 0. get a runtime
+
+        Runtime runtime = Runtime.getRuntime();
+
+        // begin trying to ping
+        try {
+
+            // 1. start a ping
+
+            Process pingProcess = runtime.exec( "/system/bin/ping -c 1 8.8.8.8" );
+
+            // waitFor - Causes the calling thread to wait for the native process
+            //  associated with this object to finish executing.
+            int exitValue = pingProcess.waitFor();
+
+            // 2. there is net if the ping returns 0
+
+            return ( exitValue == 0 );
+
+        } // end trying to ping
+
+        catch ( InterruptedException | IOException e ) { e.printStackTrace(); }
+
+        // last. exceptions and other things mean no net
+
+        return false;
+
+    } // end method isInternetUp
+
 
     /* INNER CLASSES */
 
