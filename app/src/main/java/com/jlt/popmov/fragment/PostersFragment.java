@@ -27,11 +27,13 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.TextView;
 
 import com.jlt.popmov.R;
 import com.jlt.popmov.activity.DetailActivity;
@@ -56,10 +58,19 @@ public class PostersFragment extends Fragment {
     
     /* Strings */
 
+    /**
+     * The logger.
+     */
+    private static final String LOG_TAG = PostersFragment.class.getSimpleName();
+
     /** Fragment tag. */
     public static final String POSTER_FRAGMENT_TAG = "POSTER_FRAGMENT_TAG";
 
     /* VARIABLES */
+
+    /* Fragment Posters Bindings */
+
+    private FragmentPostersBinding binding; // ditto
 
     /* Poster Adapters */
 
@@ -87,12 +98,13 @@ public class PostersFragment extends Fragment {
         // 3. use the poster adapter
         // 4. when an movie poster is clicked
         // 4a. go to details of the movie
-        // last. return the inflated (grid) view
+        // 5. set the empty view for the grid
+        // last. return the inflated view NOT THE INFLATED GRID VIEW SINCE
+        // THE INFLATED GRID VIEW *WILL* HAVE A PARENT
 
         // 0. use the posters fragment layout
 
-        FragmentPostersBinding binding = DataBindingUtil.inflate( LayoutInflater.from( getActivity() ),
-                R.layout.fragment_posters, container, false );
+        binding = DataBindingUtil.inflate( inflater, R.layout.fragment_posters, container, false );
 
         // 1. get the grid
 
@@ -124,8 +136,6 @@ public class PostersFragment extends Fragment {
 
                         Movie selectedMovie = ( Movie ) parent.getItemAtPosition( position );
 
-
-
                         Intent detailIntent = new Intent( getActivity(), DetailActivity.class );
 
                         detailIntent.putExtra( DetailFragment.ARGUMENT_MOVIE, selectedMovie );
@@ -138,9 +148,14 @@ public class PostersFragment extends Fragment {
 
         ); // end postersGridView.setOnItemClickListener
 
-        // last. return the inflated (grid) view
+        // 5. set the empty view for the grid
 
-        return postersGridView;
+        postersGridView.setEmptyView( binding.fpTvEmpty );
+
+        // last. return the inflated view NOT THE INFLATED GRID VIEW SINCE
+        // THE INFLATED GRID VIEW *WILL* HAVE A PARENT
+
+        return binding.getRoot();
 
     } // end onCreateView
 
@@ -169,18 +184,29 @@ public class PostersFragment extends Fragment {
     // begin method updateMovies
     private void updateMovies() {
 
-        // 0. get the preferred sort order
-        // 1. fetch movie info using the preferred sort order
+        // 0. if there is net
+        // 0a. get the preferred sort order
+        // 0b. fetch movie info using the preferred sort order
+        // 1. update the empty view
 
-        // 0. get the preferred sort order
+        // begin if there is net
+        if ( Utility.isInternetUp() ) {
 
-        String preferredSortOrder = Utility.getPreferredSortOrder( getActivity() );
+            // 0a. get the preferred sort order
 
-        // 1. fetch movie info using the preferred sort order
+            String preferredSortOrder = Utility.getPreferredSortOrder( getActivity() );
 
-        FetchMovieTask fetchMovieTask = new FetchMovieTask( mPosterAdapter );
+            // 0b. fetch movie info using the preferred sort order
 
-        fetchMovieTask.execute( preferredSortOrder );
+            FetchMovieTask fetchMovieTask = new FetchMovieTask( mPosterAdapter );
+
+            fetchMovieTask.execute( preferredSortOrder );
+
+        } // end if there is net
+
+        // 1. update the empty view
+
+        updateEmptyView();
 
     } // end method updateMovies
 
@@ -193,7 +219,48 @@ public class PostersFragment extends Fragment {
         updateMovies();
 
     } // end method onSortOrderChanged
-    
+
+    /** Helper method to update the view showing that the movie list is empty. */
+    // begin method updateEmptyView
+    private void updateEmptyView() {
+
+        // 0. if the movie adapter has nothing
+        // 0a. get the empty view
+        // 0a0. if there is the empty view
+        // 0a0a. tell the user why the list is empty - possibly because
+        // 0a0a0. there is no internet
+
+        // 0. if the movie adapter has nothing
+
+        // begin if adapter count is zero
+        if ( mPosterAdapter.getCount() == 0 ) {
+
+            // 0a. get the empty view
+
+            TextView emptyTextView = binding.fpTvEmpty;
+
+            // 0a0. if there is the empty view
+
+            // begin if there is an empty view
+            if ( emptyTextView != null ) {
+
+                // 0a0a. tell the user why the list is empty - possibly because
+
+                int message = R.string.message_error_no_movie_info;
+
+                // 0a0a0. there is no internet
+
+                if ( ! Utility.isInternetUp() ) { message = R.string.message_error_no_movie_info_no_connectivity; }
+
+                emptyTextView.setText( message );
+
+                Log.e( LOG_TAG, "updateEmptyView: emptyTextView message " + emptyTextView.getText() );
+            } // end if there is an empty view
+
+        } // end if adapter count is zero
+
+    } // end method updateEmptyView
+
     /* INNER CLASSES */
 
 } // end fragment PostersFragment
