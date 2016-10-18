@@ -113,12 +113,13 @@ public class Movie implements Parcelable {
 
         // 0. initialize members from parcel
 
+//        destParcel.writeString( getPosterPath() );
         // Parcel reads need to be in the same order as Parcel writes
         setID( inParcel.readLong() );
         setTitle( inParcel.readString() );
         setReleaseDate( inParcel.readString() );
         setSynopsis( inParcel.readString() );
-        setUserRating( inParcel.readFloat() );
+        setUserRating( inParcel.readDouble() );
         setPosterPath( inParcel.readString() );
 
     } // end parcel constructor
