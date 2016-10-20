@@ -34,6 +34,7 @@ import com.jlt.popmov.R;
 import com.jlt.popmov.data.Utility;
 import com.jlt.popmov.data.model.Movie;
 import com.jlt.popmov.databinding.FragmentDetailBinding;
+import com.squareup.picasso.Picasso;
 
 /**
  * {@link Fragment} to show the details of a selected movie
@@ -88,11 +89,21 @@ public class DetailFragment extends Fragment {
 
         // 2. show the movie details
 
+        binding.detailTvTitle.setText( mMovie.getTitle() );
+
+        Picasso.with( getActivity() ).load( Utility.getPosterUri( mMovie.getPosterPath() ) )
+                .placeholder( R.color.primary_dark ).into( binding.detailIvPoster );
+
         binding.detailTvDate.setText( Utility.getFormattedReleaseDate( mMovie.getReleaseDate() ) );
+
+        binding.detailTvVoteAverage.setText(
+                Utility.getFormattedUserRating( getActivity(), mMovie.getUserRating()  ) );
+
+        binding.detailTvSynopsis.setText( mMovie.getSynopsis() );
 
         // last. return the inflated view
 
-        return null;
+        return binding.getRoot();
 
     } // end onCreateView
     

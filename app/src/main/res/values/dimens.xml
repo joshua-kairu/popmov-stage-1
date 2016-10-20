@@ -114,6 +114,20 @@
 
     <dimen name="grid_item_spacing">1dp</dimen>
 
-    <dimen name="title_height">192dp</dimen>
+    <dimen name="title_height">100dp</dimen>
+
+    <!-- Detail -->
+
+    <!-- the layout size of the detail poster -->
+    
+    <dimen name="detail_poster_width">100dp</dimen>
+
+    <dimen name="detail_poster_height">200dp</dimen>
+
+    <!-- the start margin of the detail poster  -->
+    <dimen name="detail_poster_start_margin">32dp</dimen>
+
+    <!-- the elevation of the movie title section, should be 4dp here -->
+    <dimen name="detail_title_elevation">4dp</dimen>
 
 </resources>    

@@ -212,6 +212,26 @@ public class Utility {
 
     } // end method isInternetUp
 
+    /**
+     * Helper method to format the movie user rating.
+     *
+     * Movie rating comes in the form 5.92. We assume that the user needs only tenths of precision
+     * so we should display this as 5.9/10.
+     *
+     * @param context The {@link Context} we're working in
+     * @param userRating The user rating as a double
+     *
+     * @return A string containing the formatted rating.
+     * */
+    // begin method getFormattedUserRating
+    public static String getFormattedUserRating( Context context, double userRating ) {
+
+        // 0. format the user rating
+
+        // 0. format the user rating
+        return context.getString( R.string.user_rating_format, userRating );
+
+    } // end method getFormattedUserRating
 
     /* INNER CLASSES */
 

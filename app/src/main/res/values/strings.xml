@@ -41,6 +41,11 @@
         Poster: <xliff:g id = "movie_title">%1$s</xliff:g>
     </string>
 
+    <!-- Formatting strings -->
+
+    <!-- formatter for the user rating so that a rating 5.92 becomes 5.9/10 -->
+    <string name="user_rating_format"><xliff:g id="user_rating">%1$.2f</xliff:g>/10</string>
+
     <!-- Menus -->
 
     <string name="action_settings">Settings</string>
