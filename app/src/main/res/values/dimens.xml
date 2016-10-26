@@ -114,7 +114,7 @@
 
     <dimen name="grid_item_spacing">1dp</dimen>
 
-    <dimen name="title_height">100dp</dimen>
+    <dimen name="title_height">112dp</dimen>
 
     <!-- Detail -->
 
