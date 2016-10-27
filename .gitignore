@@ -1,3 +1,5 @@
+*.svg
+*.mp4
 *.iml
 .gradle
 /local.properties
