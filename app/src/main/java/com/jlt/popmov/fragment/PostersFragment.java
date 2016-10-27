@@ -27,7 +27,6 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -254,7 +253,6 @@ public class PostersFragment extends Fragment {
 
                 emptyTextView.setText( message );
 
-                Log.e( LOG_TAG, "updateEmptyView: emptyTextView message " + emptyTextView.getText() );
             } // end if there is an empty view
 
         } // end if adapter count is zero
