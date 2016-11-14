@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="192"
+   height="192"
+   id="svg4152"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   viewBox="0 0 192 192"
+   sodipodi:docname="ic_launcher_192.svg"
+   inkscape:export-filename="/run/media/joshua/DATA/Documents/Coding/Android/AndroidStudioProjects/udacity-1a-developing-android-apps-class-assignment-popmov-stage-1/popmov-stage1/ic_launcher_192.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs4154">
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lstart"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path4708"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 Z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(0.8,0,0,0.8,10,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="5.5"
+     inkscape:cx="-18.680851"
+     inkscape:cy="32"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:document-units="px"
+     inkscape:grid-bbox="true"
+     inkscape:window-width="1366"
+     inkscape:window-height="703"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata4157">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:mTitle></dc:mTitle>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     transform="translate(0,128)">
+    <rect
+       style="opacity:1;fill:#009688;fill-opacity:1;stroke:#ff4081;stroke-width:6.03118324;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4700"
+       width="169.96881"
+       height="169.96881"
+       x="11.015592"
+       y="-116.98441"
+       ry="36.30402" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4980"
+       style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75018024px;line-height:125%;font-family:'Noto Sans';-inkscape-font-specification:'Noto Sans, Bold Italic';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       transform="matrix(5.66638,0,0,5.66638,-32.186819,-263.53543)"><flowRegion
+         id="flowRegion4982"><rect
+           id="rect4984"
+           width="24.363636"
+           height="17.999996"
+           x="12"
+           y="31.636364"
+           style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75018024px;line-height:125%;font-family:'Noto Sans';-inkscape-font-specification:'Noto Sans, Bold Italic';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1" /></flowRegion><flowPara
+         id="flowPara4986"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75018024px;line-height:125%;font-family:'Noto Sans';-inkscape-font-specification:'Noto Sans, Bold Italic';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1">PM</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4988"
+       style="font-style:normal;font-weight:normal;font-size:3.75px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       transform="matrix(4,0,0,4,-23.999999,-192)"><flowRegion
+         id="flowRegion4990"><rect
+           id="rect4992"
+           width="4.3636365"
+           height="8.863636"
+           x="24.84091"
+           y="31.295454" /></flowRegion><flowPara
+         id="flowPara4994" /></flowRoot>  </g>
+</svg>
